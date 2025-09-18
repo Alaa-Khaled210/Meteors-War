@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://gru7a4scjdhp"]
+
+[ext_resource type="Texture2D" uid="uid://b00p4pesv0r1s" path="res://Graphic/vecteezy_spaceship-3d-rendering-icon-illustration_28605913.png" id="1_7qrku"]
+[ext_resource type="Script" uid="uid://cisp8jdwpesvs" path="res://scense/player.gd" id="1_kc2or"]
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 6
+script = ExtResource("1_kc2or")
+speed = 200
+
+[node name="playerimg" type="Sprite2D" parent="."]
+position = Vector2(1.1875, 7.8125)
+scale = Vector2(0.0868125, 0.0811875)
+texture = ExtResource("1_7qrku")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-554, -245)
+polygon = PackedVector2Array(556, 204, 566, 216, 576, 237, 579, 254, 600, 264, 606, 258, 611, 261, 617, 273, 617, 281, 614, 285, 613, 292, 601, 292, 597, 283, 595, 277, 597, 271, 578, 273, 575, 284, 578, 290, 574, 294, 565, 297, 546, 298, 535, 291, 538, 284, 535, 272, 516, 271, 518, 279, 515, 283, 513, 292, 500, 293, 495, 279, 497, 271, 505, 257, 512, 263, 533, 254, 541, 226)
+
+[node name="LaserStartPos" type="Marker2D" parent="."]
+position = Vector2(0, -88)
+gizmo_extents = 45.9
+
+[node name="LaserTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]

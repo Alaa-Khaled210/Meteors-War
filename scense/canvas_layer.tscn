@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckl1tyo6hodpx"]
+
+[ext_resource type="Script" uid="uid://cabgir3gc7lf0" path="res://canvas_layer.gd" id="1_vu6fl"]
+[ext_resource type="Texture2D" uid="uid://bntt520r16eor" path="res://Graphic/heart-icon-valentine-2 1.png" id="2_o2o46"]
+
+[node name="ui_hearts" type="CanvasLayer"]
+script = ExtResource("1_vu6fl")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 13.0
+offset_top = 570.0
+offset_right = 281.0
+offset_bottom = 634.0
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_o2o46")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_o2o46")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_o2o46")
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_o2o46")
+stretch_mode = 5
