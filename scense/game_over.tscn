@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4gealged4jk5"]
+[gd_scene load_steps=4 format=3 uid="uid://c4gealged4jk5"]
 
+[ext_resource type="Script" uid="uid://blsdyvjqr8g5t" path="res://scense/game_over.gd" id="1_3imhc"]
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_jic06"]
+[ext_resource type="PackedScene" uid="uid://ce6y6qjtkyntq" path="res://scense/level.tscn" id="2_ln6ue"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -9,6 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3imhc")
+level_scene = ExtResource("2_ln6ue")
 
 [node name="Bg" type="ColorRect" parent="."]
 layout_mode = 1
