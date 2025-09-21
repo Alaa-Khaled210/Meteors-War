@@ -7,8 +7,8 @@ var laser_scene :PackedScene =load("res://scense/laser.tscn")
 var health: int = 4
 
 func _ready() -> void:
-	
-	#get_tree().call_group('Ui','set_health',health)
+	#set health ui
+	get_tree().call_group('Ui','set_health',health)
 
 	#Stars 
 	var size := get_viewport().get_visible_rect().size

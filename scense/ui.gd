@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 static var image = load("res://Graphic/rocket2.png")
-
+var time_elapsed := 0
 func set_health(amount):
 	
 # remove all children from hboxcontainer
@@ -18,9 +18,9 @@ func set_health(amount):
 		#text_rect.rect_size=Vector2(25,25)
 		text_rect.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	
-		
-		
 		#------------------------------------------------------
 
-			
-		
+func _on_score_timer_timeout() -> void:
+	time_elapsed += 1
+	$MarginContainer/Label.text=str(time_elapsed)
+	Global.score=time_elapsed

@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://de07xww14b15l"]
+[gd_scene load_steps=3 format=3 uid="uid://de07xww14b15l"]
 
 [ext_resource type="Script" uid="uid://c36l3cwsbc0ov" path="res://scense/ui.gd" id="1_hwstv"]
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_ix2n3"]
-[ext_resource type="Texture2D" uid="uid://c57etsif60a45" path="res://Graphic/rocket2.png" id="3_kj0wu"]
 
 [node name="Ui" type="CanvasLayer" groups=["Ui"]]
 script = ExtResource("1_hwstv")
@@ -22,7 +21,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.85779, 0.773406, 0.99277, 1)
 theme_override_fonts/font = ExtResource("1_ix2n3")
 theme_override_font_sizes/font_size = 40
-text = "1234"
+text = "0"
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
@@ -39,30 +38,7 @@ theme_override_constants/margin_bottom = 4
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-localize_numeral_system = false
-texture = ExtResource("3_kj0wu")
-stretch_mode = 5
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-localize_numeral_system = false
-texture = ExtResource("3_kj0wu")
-stretch_mode = 5
-
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-localize_numeral_system = false
-texture = ExtResource("3_kj0wu")
-stretch_mode = 5
-
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-localize_numeral_system = false
-texture = ExtResource("3_kj0wu")
-stretch_mode = 5
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
