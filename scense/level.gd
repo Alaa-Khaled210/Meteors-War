@@ -40,7 +40,7 @@ func _on_meteor_collision():
 	health -=1
 	get_tree().call_group('Ui','set_health',health)
 	if health <=0 :
-		get_tree().change_scene_to_file("res://scense/game_over.tscn")
+		get_tree().call_deferred("change_scene_to_file","res://scense/game_over.tscn")
 		
 func _on_player_laser(pos) -> void:
 	var laser = laser_scene.instantiate()
