@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://gru7a4scjdhp"]
+[gd_scene load_steps=4 format=3 uid="uid://gru7a4scjdhp"]
 
 [ext_resource type="Texture2D" uid="uid://b00p4pesv0r1s" path="res://Graphic/vecteezy_spaceship-3d-rendering-icon-illustration_28605913.png" id="1_7qrku"]
 [ext_resource type="Script" uid="uid://cisp8jdwpesvs" path="res://scense/player.gd" id="1_kc2or"]
+[ext_resource type="AudioStream" uid="uid://dek0a6pj6lmpr" path="res://Audio/mixkit-short-laser-gun-shot-1670.wav" id="3_rtp1y"]
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
@@ -24,5 +25,8 @@ gizmo_extents = 45.9
 [node name="LaserTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rtp1y")
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
