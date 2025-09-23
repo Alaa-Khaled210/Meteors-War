@@ -28,7 +28,12 @@ func _on_body_entered(_body: Node2D) -> void:
 	collision.emit()
 
 
-func _on_area_entered(area: Area2D) -> void:
+
+func _on_area_entered(area: Area2D) -> void:    
+
 	area.queue_free()
-	queue_free()
+	$explosion.play()
+	$Sprite2D.hide()
 	
+func _on_explosion_finished() -> void:
+	queue_free()
