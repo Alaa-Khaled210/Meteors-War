@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4gealged4jk5"]
+[gd_scene load_steps=5 format=3 uid="uid://c4gealged4jk5"]
 
 [ext_resource type="Script" uid="uid://blsdyvjqr8g5t" path="res://scense/game_over.gd" id="1_3imhc"]
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_jic06"]
 [ext_resource type="PackedScene" uid="uid://ce6y6qjtkyntq" path="res://scense/level.tscn" id="2_ln6ue"]
+[ext_resource type="AudioStream" uid="uid://cbr2jbyl1812i" path="res://Audio/mixkit-player-losing-or-failing-2042.wav" id="4_r8gqb"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -37,6 +38,7 @@ theme_override_constants/separation = 13
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_jic06")
 theme_override_font_sizes/font_size = 50
 text = "Game Over"
@@ -44,6 +46,7 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_jic06")
 theme_override_font_sizes/font_size = 25
 text = "Score :"
@@ -65,6 +68,11 @@ theme_override_constants/margin_bottom = 20
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.791556, 7.21961e-07, 0.476815, 1)
 theme_override_fonts/font = ExtResource("1_jic06")
 theme_override_font_sizes/font_size = 15
 text = "Press space to start agaiin"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_r8gqb")
+autoplay = true
