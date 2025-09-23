@@ -7,6 +7,7 @@ func set_health(amount):
 # remove all children from hboxcontainer
 	for child in $MarginContainer2/HBoxContainer.get_children():
 		child.queue_free()
+		$DamagePlayer.play()
 
 # creat new childrean amount is set by health 
 	for i in amount:
