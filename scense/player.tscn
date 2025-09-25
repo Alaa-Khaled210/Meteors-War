@@ -1,13 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://gru7a4scjdhp"]
+[gd_scene load_steps=5 format=3 uid="uid://gru7a4scjdhp"]
 
 [ext_resource type="Texture2D" uid="uid://b00p4pesv0r1s" path="res://Graphic/vecteezy_spaceship-3d-rendering-icon-illustration_28605913.png" id="1_7qrku"]
 [ext_resource type="Script" uid="uid://cisp8jdwpesvs" path="res://scense/player.gd" id="1_kc2or"]
 [ext_resource type="AudioStream" uid="uid://dek0a6pj6lmpr" path="res://Audio/mixkit-short-laser-gun-shot-1670.wav" id="3_rtp1y"]
 
+[sub_resource type="Gradient" id="Gradient_rtp1y"]
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_kc2or")
 speed = 200
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(1, 45)
+lifetime = 0.4
+emission_shape = 1
+emission_sphere_radius = 12.35
+gravity = Vector2(0, 100)
+scale_amount_min = 8.39
+scale_amount_max = 15.79
+color = Color(0.902459, 0.322686, 0.309278, 1)
+color_ramp = SubResource("Gradient_rtp1y")
 
 [node name="playerimg" type="Sprite2D" parent="."]
 position = Vector2(1.1875, 7.8125)
@@ -23,7 +36,7 @@ position = Vector2(0, -88)
 gizmo_extents = 45.9
 
 [node name="LaserTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.25
 one_shot = true
 
 [node name="LaserSound" type="AudioStreamPlayer2D" parent="."]

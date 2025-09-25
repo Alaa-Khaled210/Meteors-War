@@ -1,0 +1,132 @@
+[gd_scene load_steps=7 format=3 uid="uid://co6ve4o0cy18h"]
+
+[ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_nh084"]
+[ext_resource type="Texture2D" uid="uid://b00p4pesv0r1s" path="res://Graphic/vecteezy_spaceship-3d-rendering-icon-illustration_28605913.png" id="2_rnxhc"]
+[ext_resource type="Texture2D" uid="uid://cv4i2byqbank0" path="res://Graphic/meterors/3.png" id="3_0j2ps"]
+[ext_resource type="Texture2D" uid="uid://cdrc35jqua6l6" path="res://Graphic/meterors/4.png" id="4_oslit"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1icw"]
+bg_color = Color(0.402366, 0.400553, 0.460239, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oslit"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.556863, 0.560784, 0.67451, 0.65098)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+
+[node name="rocket" type="Sprite2D" parent="."]
+position = Vector2(150, 517)
+rotation = 0.949459
+scale = Vector2(0.125527, 0.113777)
+texture = ExtResource("2_rnxhc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1048.72, 99.972)
+rotation = 0.949459
+scale = Vector2(0.261628, 0.250386)
+texture = ExtResource("3_0j2ps")
+
+[node name="bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.5
+offset_top = -211.5
+offset_right = 301.5
+offset_bottom = 211.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g1icw")
+
+[node name="MarginContainer" type="MarginContainer" parent="bg"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bg/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="title" type="Label" parent="bg/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.920759, 0.851209, 0.962248, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nh084")
+theme_override_font_sizes/font_size = 50
+text = "Meteor Wars"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playgame" type="Button" parent="bg/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.92692, 0.79755, 0.931981, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 0
+theme_override_constants/icon_max_width = 50
+theme_override_fonts/font = ExtResource("1_nh084")
+theme_override_font_sizes/font_size = 30
+theme_override_icons/icon = ExtResource("4_oslit")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oslit")
+text = "Play"
+
+[node name="instructions" type="Button" parent="bg/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.92692, 0.79755, 0.931981, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 0
+theme_override_constants/icon_max_width = 50
+theme_override_fonts/font = ExtResource("1_nh084")
+theme_override_font_sizes/font_size = 30
+theme_override_icons/icon = ExtResource("4_oslit")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oslit")
+text = "Instructios"
+
+[node name="exit" type="Button" parent="bg/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.92692, 0.79755, 0.931981, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 0
+theme_override_constants/icon_max_width = 50
+theme_override_fonts/font = ExtResource("1_nh084")
+theme_override_font_sizes/font_size = 30
+theme_override_icons/icon = ExtResource("4_oslit")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oslit")
+text = "Exit"
