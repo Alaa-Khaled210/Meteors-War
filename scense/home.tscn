@@ -1,12 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://co6ve4o0cy18h"]
+[gd_scene load_steps=17 format=3 uid="uid://co6ve4o0cy18h"]
 
 [ext_resource type="Script" uid="uid://r65ukqdwuj55" path="res://scense/home.gd" id="1_g1icw"]
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_nh084"]
 [ext_resource type="Texture2D" uid="uid://b00p4pesv0r1s" path="res://Graphic/vecteezy_spaceship-3d-rendering-icon-illustration_28605913.png" id="2_rnxhc"]
-[ext_resource type="Texture2D" uid="uid://cv4i2byqbank0" path="res://Graphic/meterors/3.png" id="3_0j2ps"]
 [ext_resource type="Texture2D" uid="uid://cdrc35jqua6l6" path="res://Graphic/meterors/4.png" id="4_oslit"]
 [ext_resource type="AudioStream" uid="uid://do7wqechta5dv" path="res://Audio/mixkit-retro-arcade-casino-notification-211.wav" id="6_ijrru"]
+[ext_resource type="Texture2D" uid="uid://r0rqllhr7bec" path="res://Graphic/homemeteorAnimate/3.png" id="7_8f2e2"]
 [ext_resource type="AudioStream" uid="uid://b5t6l825irktp" path="res://Audio/mixkit-hover-click-tone-2568.wav" id="7_6347k"]
+[ext_resource type="Texture2D" uid="uid://bhqg5wqn1x6bp" path="res://Graphic/homemeteorAnimate/3_2.png" id="8_e211a"]
+[ext_resource type="Texture2D" uid="uid://tghp5cms11ty" path="res://Graphic/homemeteorAnimate/3_3.png" id="9_tg0sb"]
+
+[sub_resource type="Gradient" id="Gradient_6347k"]
+offsets = PackedFloat32Array(0, 0.706468, 0.711443)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1icw"]
 bg_color = Color(0.402366, 0.400553, 0.460239, 1)
@@ -39,6 +45,23 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_iixnd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8f2e2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e211a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tg0sb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="home" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -63,17 +86,23 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 10
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(99, 554)
+rotation = 0.949459
+scale = Vector2(0.125527, 0.113777)
+emission_shape = 1
+emission_sphere_radius = 0.01
+gravity = Vector2(-98, 50)
+scale_amount_min = 8.29
+scale_amount_max = 15.7
+color = Color(0.86633, 0.355972, 0.33381, 1)
+color_ramp = SubResource("Gradient_6347k")
+
 [node name="rocket" type="Sprite2D" parent="."]
 position = Vector2(150, 517)
 rotation = 0.949459
 scale = Vector2(0.125527, 0.113777)
 texture = ExtResource("2_rnxhc")
-
-[node name="meteorhome" type="Sprite2D" parent="."]
-position = Vector2(1048.72, 99.972)
-rotation = 0.949459
-scale = Vector2(0.261628, 0.250386)
-texture = ExtResource("3_0j2ps")
 
 [node name="bg" type="Panel" parent="."]
 layout_mode = 1
@@ -187,6 +216,13 @@ volume_db = -16.377
 
 [node name="hover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_6347k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1050, 93)
+scale = Vector2(0.271484, 0.267578)
+sprite_frames = SubResource("SpriteFrames_iixnd")
+autoplay = "default"
+frame_progress = 0.274875
 
 [connection signal="mouse_entered" from="bg/MarginContainer/VBoxContainer/playgame" to="." method="_on_playgame_mouse_entered"]
 [connection signal="pressed" from="bg/MarginContainer/VBoxContainer/playgame" to="." method="_on_playgame_pressed"]
