@@ -47,3 +47,4 @@ func _on_player_laser(pos) -> void:
 	$Lasers.add_child(laser)
 	laser.position=pos
 	
+	

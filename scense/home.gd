@@ -19,7 +19,9 @@ func _on_playgame_pressed() -> void:
 
 func _on_instructions_pressed() -> void:
 	$click.play()
-
+	get_tree().change_scene_to_file("res://scense/instructions.tscn")
+	
+	
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 

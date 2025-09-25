@@ -1,0 +1,249 @@
+[gd_scene load_steps=18 format=3 uid="uid://7svdd835ec5c"]
+
+[ext_resource type="Script" uid="uid://dbnmu64q4hwp7" path="res://scense/instructions.gd" id="1_c75xg"]
+[ext_resource type="Texture2D" uid="uid://r0rqllhr7bec" path="res://Graphic/homemeteorAnimate/3.png" id="1_psfcr"]
+[ext_resource type="Texture2D" uid="uid://bhqg5wqn1x6bp" path="res://Graphic/homemeteorAnimate/3_2.png" id="2_gavqf"]
+[ext_resource type="Texture2D" uid="uid://tghp5cms11ty" path="res://Graphic/homemeteorAnimate/3_3.png" id="3_1jfr3"]
+[ext_resource type="Texture2D" uid="uid://b00p4pesv0r1s" path="res://Graphic/vecteezy_spaceship-3d-rendering-icon-illustration_28605913.png" id="4_gavqf"]
+[ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="5_vk23w"]
+[ext_resource type="Texture2D" uid="uid://vjdrxy5k2wj6" path="res://Graphic/instruction/keyboard-icon-left-right-up-down-arrows_47412671.png" id="6_tuftc"]
+[ext_resource type="Texture2D" uid="uid://d0w3qquvyxo8a" path="res://Graphic/instruction/space.png" id="7_tuftc"]
+[ext_resource type="Texture2D" uid="uid://c7piur1xmtxdq" path="res://Graphic/instruction/arrow.png" id="8_buvvi"]
+[ext_resource type="Texture2D" uid="uid://cq41o6tkwejso" path="res://Graphic/instruction/pressed_button.png" id="9_0rgra"]
+[ext_resource type="AudioStream" uid="uid://b5t6l825irktp" path="res://Audio/mixkit-hover-click-tone-2568.wav" id="11_30l08"]
+[ext_resource type="Texture2D" uid="uid://bdrgvk44mrwyd" path="res://Graphic/instruction/hover.png" id="11_tr5vr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vk23w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_psfcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gavqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1jfr3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_1jfr3"]
+offsets = PackedFloat32Array(0, 0.557214)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gavqf"]
+bg_color = Color(0.643991, 0.559176, 0.728547, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.801651, 0.464542, 0.693181, 0.6)
+shadow_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tr5vr"]
+bg_color = Color(0.6, 0.6, 0.6, 0.341176)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.611765, 0.176471, 0.576471, 0.431373)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtf8c"]
+bg_color = Color(0.877803, 0.733016, 0.841825, 0.211765)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c75xg")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.545098, 0.380392, 0.486275, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1042, 103)
+scale = Vector2(0.30957, 0.294922)
+sprite_frames = SubResource("SpriteFrames_vk23w")
+autoplay = "default"
+frame = 2
+frame_progress = 0.448728
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(92, 565)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2(-98, 50)
+scale_amount_min = 8.29
+scale_amount_max = 15.7
+color = Color(0.752651, 0.368151, 0.232744, 1)
+color_ramp = SubResource("Gradient_1jfr3")
+
+[node name="rociknstruc" type="Sprite2D" parent="."]
+position = Vector2(128, 528)
+rotation = 0.851721
+scale = Vector2(0.11404, 0.105998)
+texture = ExtResource("4_gavqf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -385.5
+offset_top = -238.5
+offset_right = 385.5
+offset_bottom = 238.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gavqf")
+
+[node name="ColorRect2" type="ColorRect" parent="Panel"]
+layout_mode = 2
+offset_left = 430.5
+offset_top = 44.5
+offset_right = 617.5
+offset_bottom = 183.5
+color = Color(0.74902, 0.811765, 0.909804, 0.341176)
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -333.0
+offset_top = -199.0
+offset_right = 349.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="move" type="Label" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.936266, 0.823485, 0.97439, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_vk23w")
+theme_override_font_sizes/font_size = 30
+text = "MOVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="moveico" type="Sprite2D" parent="Panel/MarginContainer/HBoxContainer"]
+position = Vector2(460.5, 64.5)
+scale = Vector2(0.0543314, 0.0463186)
+texture = ExtResource("6_tuftc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = 20.0
+offset_right = 296.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="shoot" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.937255, 0.823529, 0.972549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_vk23w")
+theme_override_font_sizes/font_size = 30
+text = "SHOOT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer"]
+position = Vector2(465.5, 59.5)
+scale = Vector2(0.432129, 0.221191)
+texture = ExtResource("7_tuftc")
+
+[node name="backbtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1011.0
+offset_top = 609.0
+offset_right = 1267.0
+offset_bottom = 865.0
+scale = Vector2(0.361179, -0.36301)
+texture_normal = ExtResource("8_buvvi")
+texture_pressed = ExtResource("9_0rgra")
+texture_hover = ExtResource("11_tr5vr")
+stretch_mode = 0
+
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_30l08")
+
+[node name="instruction-tilte" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 562.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.937255, 0.823529, 0.972549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("5_vk23w")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_tr5vr")
+text = "INSTRUCTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="note" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -180.0
+offset_right = 176.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qtf8c")
+
+[node name="Label" type="Label" parent="note"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 29.0
+offset_right = 324.0
+offset_bottom = 150.0
+text = "Note : try to be alive as long as possible or you will know your life have been scored by seconds"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="mouse_entered" from="backbtn" to="." method="_on_backbtn_mouse_entered"]
+[connection signal="pressed" from="backbtn" to="." method="_on_backbtn_pressed"]
