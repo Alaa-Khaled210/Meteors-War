@@ -3,7 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,3 +36,15 @@ func _on_instructions_mouse_entered() -> void:
 
 func _on_exit_mouse_entered() -> void:
 	$hover.play()
+
+
+func _on_playgame_focus_entered() -> void:
+	$hover.play()
+
+func _on_instructions_focus_entered() -> void:
+	$hover.play()
+
+
+func _on_exit_focus_entered() -> void:
+	$hover.play()
+	
