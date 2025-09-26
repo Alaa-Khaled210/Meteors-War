@@ -1,10 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://7svdd835ec5c"]
+[gd_scene load_steps=22 format=3 uid="uid://7svdd835ec5c"]
 
 [ext_resource type="Script" uid="uid://dbnmu64q4hwp7" path="res://scense/instructions.gd" id="1_c75xg"]
 [ext_resource type="Texture2D" uid="uid://r0rqllhr7bec" path="res://Graphic/homemeteorAnimate/3.png" id="1_psfcr"]
 [ext_resource type="Texture2D" uid="uid://bhqg5wqn1x6bp" path="res://Graphic/homemeteorAnimate/3_2.png" id="2_gavqf"]
+[ext_resource type="Texture2D" uid="uid://pndv4i63n14e" path="res://Graphic/stars/1.png" id="2_r2d2c"]
 [ext_resource type="Texture2D" uid="uid://tghp5cms11ty" path="res://Graphic/homemeteorAnimate/3_3.png" id="3_1jfr3"]
+[ext_resource type="Texture2D" uid="uid://ce4p3bwvuevie" path="res://Graphic/stars/2.png" id="3_y5fpu"]
 [ext_resource type="Texture2D" uid="uid://b00p4pesv0r1s" path="res://Graphic/vecteezy_spaceship-3d-rendering-icon-illustration_28605913.png" id="4_gavqf"]
+[ext_resource type="Texture2D" uid="uid://cciyto7eisg0y" path="res://Graphic/stars/3.png" id="4_m2w3b"]
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="5_vk23w"]
 [ext_resource type="Texture2D" uid="uid://vjdrxy5k2wj6" path="res://Graphic/instruction/keyboard-icon-left-right-up-down-arrows_47412671.png" id="6_tuftc"]
 [ext_resource type="Texture2D" uid="uid://d0w3qquvyxo8a" path="res://Graphic/instruction/space.png" id="7_tuftc"]
@@ -12,6 +15,23 @@
 [ext_resource type="Texture2D" uid="uid://cq41o6tkwejso" path="res://Graphic/instruction/pressed_button.png" id="9_0rgra"]
 [ext_resource type="AudioStream" uid="uid://b5t6l825irktp" path="res://Audio/mixkit-hover-click-tone-2568.wav" id="11_30l08"]
 [ext_resource type="Texture2D" uid="uid://bdrgvk44mrwyd" path="res://Graphic/instruction/hover.png" id="11_tr5vr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8fnu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r2d2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y5fpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m2w3b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vk23w"]
 animations = [{
@@ -65,6 +85,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c75xg")
+metadata/_edit_lock_ = true
 
 [node name="bg" type="ColorRect" parent="."]
 layout_mode = 1
@@ -74,6 +95,75 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.545098, 0.380392, 0.486275, 1)
+metadata/_edit_lock_ = true
+
+[node name="stars-instructions" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="stars-instructions"]
+position = Vector2(72, 176)
+scale = Vector2(0.0105719, 0.0109324)
+sprite_frames = SubResource("SpriteFrames_k8fnu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="stars-instructions"]
+position = Vector2(72, 176)
+scale = Vector2(0.0105719, 0.0109324)
+sprite_frames = SubResource("SpriteFrames_k8fnu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="stars-instructions"]
+position = Vector2(72, 176)
+scale = Vector2(0.0105719, 0.0109324)
+sprite_frames = SubResource("SpriteFrames_k8fnu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="stars-instructions"]
+position = Vector2(72, 176)
+scale = Vector2(0.0105719, 0.0109324)
+sprite_frames = SubResource("SpriteFrames_k8fnu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="stars-instructions"]
+position = Vector2(72, 176)
+scale = Vector2(0.0105719, 0.0109324)
+sprite_frames = SubResource("SpriteFrames_k8fnu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="stars-instructions"]
+position = Vector2(72, 176)
+scale = Vector2(0.0105719, 0.0109324)
+sprite_frames = SubResource("SpriteFrames_k8fnu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="stars-instructions"]
+position = Vector2(72, 176)
+scale = Vector2(0.0105719, 0.0109324)
+sprite_frames = SubResource("SpriteFrames_k8fnu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="stars-instructions"]
+position = Vector2(72, 176)
+scale = Vector2(0.0105719, 0.0109324)
+sprite_frames = SubResource("SpriteFrames_k8fnu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="stars-instructions"]
+position = Vector2(72, 176)
+scale = Vector2(0.0105719, 0.0109324)
+sprite_frames = SubResource("SpriteFrames_k8fnu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="stars-instructions"]
+position = Vector2(72, 176)
+scale = Vector2(0.0105719, 0.0109324)
+sprite_frames = SubResource("SpriteFrames_k8fnu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="stars-instructions"]
+position = Vector2(72, 176)
+scale = Vector2(0.0105719, 0.0109324)
+sprite_frames = SubResource("SpriteFrames_k8fnu")
+autoplay = "default"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1042, 103)
@@ -113,6 +203,7 @@ offset_bottom = 238.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gavqf")
+metadata/_edit_lock_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="Panel"]
 layout_mode = 2

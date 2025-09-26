@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://co6ve4o0cy18h"]
+[gd_scene load_steps=22 format=3 uid="uid://co6ve4o0cy18h"]
 
 [ext_resource type="Script" uid="uid://r65ukqdwuj55" path="res://scense/home.gd" id="1_g1icw"]
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_nh084"]
@@ -10,6 +10,26 @@
 [ext_resource type="AudioStream" uid="uid://b5t6l825irktp" path="res://Audio/mixkit-hover-click-tone-2568.wav" id="7_6347k"]
 [ext_resource type="Texture2D" uid="uid://bhqg5wqn1x6bp" path="res://Graphic/homemeteorAnimate/3_2.png" id="8_e211a"]
 [ext_resource type="Texture2D" uid="uid://tghp5cms11ty" path="res://Graphic/homemeteorAnimate/3_3.png" id="9_tg0sb"]
+[ext_resource type="Texture2D" uid="uid://pndv4i63n14e" path="res://Graphic/stars/1.png" id="11_106qt"]
+[ext_resource type="Texture2D" uid="uid://ce4p3bwvuevie" path="res://Graphic/stars/2.png" id="12_uc1we"]
+[ext_resource type="Texture2D" uid="uid://cciyto7eisg0y" path="res://Graphic/stars/3.png" id="13_ggyeo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3nfck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_106qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_uc1we")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ggyeo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="Gradient" id="Gradient_6347k"]
 offsets = PackedFloat32Array(0, 0.706468, 0.711443)
@@ -89,6 +109,92 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.556863, 0.560784, 0.67451, 0.65098)
+
+[node name="stars" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_3nfck")
+autoplay = "default"
+frame_progress = 0.607083
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_3nfck")
+autoplay = "default"
+frame_progress = 0.391064
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_3nfck")
+autoplay = "default"
+frame_progress = 0.391064
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_3nfck")
+autoplay = "default"
+frame_progress = 0.391064
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_3nfck")
+autoplay = "default"
+frame_progress = 0.391064
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_3nfck")
+autoplay = "default"
+frame_progress = 0.391064
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_3nfck")
+autoplay = "default"
+frame_progress = 0.391064
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_3nfck")
+autoplay = "default"
+frame_progress = 0.391064
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_3nfck")
+autoplay = "default"
+frame_progress = 0.391064
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_3nfck")
+autoplay = "default"
+frame_progress = 0.391064
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_3nfck")
+autoplay = "default"
+frame_progress = 0.391064
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_3nfck")
+autoplay = "default"
+frame_progress = 0.391064
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -175,7 +281,7 @@ alignment = 1
 [node name="playgame" type="Button" parent="bg/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-focus_neighbor_bottom = NodePath("../Instructions")
+focus_neighbor_top = NodePath("../Exit")
 theme_override_colors/font_color = Color(0.92692, 0.79755, 0.931981, 1)
 theme_override_colors/font_focus_color = Color(0.556863, 0.509804, 0.662745, 1)
 theme_override_constants/outline_size = 20
@@ -211,6 +317,7 @@ text = "Instructions"
 [node name="Exit" type="Button" parent="bg/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../playgame")
 theme_override_colors/font_color = Color(0.92692, 0.79755, 0.931981, 1)
 theme_override_colors/font_focus_color = Color(0.556863, 0.509804, 0.662745, 1)
 theme_override_constants/outline_size = 20
@@ -227,7 +334,7 @@ text = "Exit"
 
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ijrru")
-volume_db = -16.377
+volume_db = -14.614
 
 [node name="hover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_6347k")
