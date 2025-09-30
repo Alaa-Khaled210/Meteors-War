@@ -1,9 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4gealged4jk5"]
+[gd_scene load_steps=11 format=3 uid="uid://c4gealged4jk5"]
 
 [ext_resource type="Script" uid="uid://blsdyvjqr8g5t" path="res://scense/game_over.gd" id="1_3imhc"]
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_jic06"]
 [ext_resource type="PackedScene" uid="uid://ce6y6qjtkyntq" path="res://scense/level.tscn" id="2_ln6ue"]
 [ext_resource type="AudioStream" uid="uid://cbr2jbyl1812i" path="res://Audio/mixkit-player-losing-or-failing-2042.wav" id="4_r8gqb"]
+[ext_resource type="Texture2D" uid="uid://bb2v7cikeouyh" path="res://Graphic/gameover/1.png" id="4_tdf7g"]
+[ext_resource type="Texture2D" uid="uid://bssbs50ggg1tp" path="res://Graphic/gameover/meteorite.png" id="5_0tomw"]
+[ext_resource type="Texture2D" uid="uid://b4s4w4etteir4" path="res://Graphic/gameover/2.png" id="5_vwsov"]
+[ext_resource type="Texture2D" uid="uid://jjc6j4acwrcg" path="res://Graphic/gameover/3.png" id="6_6w0r0"]
+[ext_resource type="Texture2D" uid="uid://bj5bl5isij8mp" path="res://Graphic/gameover/4.png" id="7_2mbiu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1th6y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tdf7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vwsov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6w0r0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2mbiu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -24,6 +49,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.759991, 0.595569, 0.699824, 1)
 
+[node name="meteorfall" type="Sprite2D" parent="."]
+position = Vector2(157.903, 146.367)
+scale = Vector2(0.0790485, 0.0728164)
+texture = ExtResource("5_0tomw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(569, 486)
+scale = Vector2(0.280724, 0.255398)
+sprite_frames = SubResource("SpriteFrames_1th6y")
+autoplay = "default"
+frame_progress = 0.792265
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -38,7 +75,12 @@ theme_override_constants/separation = 13
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.985674, 0.885979, 0.913354, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("1_jic06")
 theme_override_font_sizes/font_size = 50
 text = "Game Over"
@@ -46,7 +88,12 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.984314, 0.886275, 0.913725, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 3
 theme_override_fonts/font = ExtResource("1_jic06")
 theme_override_font_sizes/font_size = 25
 text = "Live Score :"

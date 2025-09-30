@@ -247,10 +247,14 @@ offset_bottom = 67.5
 grow_horizontal = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.920759, 0.851209, 0.962248, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.532721, 0.44632, 0.864712, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_nh084")
 theme_override_font_sizes/font_size = 50
-text = "Meteor Wars"
+text = "Meteors War"
 horizontal_alignment = 1
 vertical_alignment = 1
 
