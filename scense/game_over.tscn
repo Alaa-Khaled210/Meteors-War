@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4gealged4jk5"]
+[gd_scene load_steps=12 format=3 uid="uid://c4gealged4jk5"]
 
 [ext_resource type="Script" uid="uid://blsdyvjqr8g5t" path="res://scense/game_over.gd" id="1_3imhc"]
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_jic06"]
@@ -29,6 +29,18 @@ animations = [{
 "name": &"default",
 "speed": 1.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdf7g"]
+bg_color = Color(0.898093, 0.77519, 0.867602, 0.52549)
+border_width_left = 5
+border_width_bottom = 5
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_color = Color(0, 0, 0, 0.184314)
+shadow_size = 2
+shadow_offset = Vector2(5, 5)
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -115,11 +127,38 @@ theme_override_constants/margin_bottom = 20
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0.791556, 7.21961e-07, 0.476815, 1)
+theme_override_colors/font_shadow_color = Color(0.60237, 1.58831e-06, 0.357967, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("1_jic06")
 theme_override_font_sizes/font_size = 15
-text = "Press space to start agaiin"
+text = "Press space to start again"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_r8gqb")
 autoplay = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 835.0
+offset_top = 29.0
+offset_right = 1123.0
+offset_bottom = 291.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tdf7g")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 42.0
+offset_right = 249.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0.706821, 0.365382, 0.616246, 0.980392)
+theme_override_colors/font_shadow_color = Color(0.568438, 0.51617, 0.807854, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("1_jic06")
+theme_override_font_sizes/font_size = 18
+text = "Thank you for being alife for this period you are fighter and i know "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

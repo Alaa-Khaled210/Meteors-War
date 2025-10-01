@@ -241,7 +241,7 @@ theme_override_colors/font_color = Color(0.936266, 0.823485, 0.97439, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_vk23w")
 theme_override_font_sizes/font_size = 30
-text = "MOVE"
+text = "CONTROLS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
