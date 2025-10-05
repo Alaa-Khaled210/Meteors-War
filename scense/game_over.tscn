@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4gealged4jk5"]
+[gd_scene load_steps=16 format=3 uid="uid://c4gealged4jk5"]
 
 [ext_resource type="Script" uid="uid://blsdyvjqr8g5t" path="res://scense/game_over.gd" id="1_3imhc"]
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_jic06"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://b4s4w4etteir4" path="res://Graphic/gameover/2.png" id="5_vwsov"]
 [ext_resource type="Texture2D" uid="uid://jjc6j4acwrcg" path="res://Graphic/gameover/3.png" id="6_6w0r0"]
 [ext_resource type="Texture2D" uid="uid://bj5bl5isij8mp" path="res://Graphic/gameover/4.png" id="7_2mbiu"]
+[ext_resource type="Texture2D" uid="uid://gtgu2x03gxbf" path="res://Graphic/gameover/space.png" id="10_vwsov"]
+[ext_resource type="Texture2D" uid="uid://ccbpusoim2biq" path="res://Graphic/gameover/space(1).png" id="11_6w0r0"]
+[ext_resource type="AudioStream" uid="uid://do7wqechta5dv" path="res://Audio/mixkit-retro-arcade-casino-notification-211.wav" id="12_1th6y"]
+[ext_resource type="AudioStream" uid="uid://b5t6l825irktp" path="res://Audio/mixkit-hover-click-tone-2568.wav" id="12_2mbiu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1th6y"]
 animations = [{
@@ -162,3 +166,38 @@ text = "Thank you for being alife for this period you are fighter and i know "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="shadow_forhomebtn" type="TextureButton" parent="."]
+modulate = Color(0, 0, 0.427451, 0.984314)
+layout_mode = 0
+offset_left = 38.0
+offset_top = 479.0
+offset_right = 171.0
+offset_bottom = 621.0
+texture_normal = ExtResource("10_vwsov")
+texture_pressed = ExtResource("11_6w0r0")
+texture_hover = ExtResource("11_6w0r0")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="homeorigin" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 480.0
+offset_right = 171.0
+offset_bottom = 622.0
+texture_normal = ExtResource("10_vwsov")
+texture_pressed = ExtResource("11_6w0r0")
+texture_hover = ExtResource("11_6w0r0")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="click_tohome" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_1th6y")
+volume_db = -17.964
+
+[node name="hover_tohome" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_2mbiu")
+
+[connection signal="mouse_entered" from="homeorigin" to="." method="_on_homeorigin_mouse_entered"]
+[connection signal="pressed" from="homeorigin" to="." method="_on_homeorigin_pressed"]
