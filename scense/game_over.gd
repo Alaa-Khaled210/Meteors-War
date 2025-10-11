@@ -3,28 +3,35 @@ extends Control
 @export var level_scene : PackedScene 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.\
-var strList = ["Donot worry you are still amazing in my eyes",
-"谢谢，你辛苦了","I'm proud of you " ,
-"Thank you for being alife for this period you are fighter and i know"]
-func _ready() -> void:
-	# quote
-	#for quote in $Panel/quates.get_children():
-		#$Panel/quote1.text=quote.show()
-		#define a RNG variable
-	var rng = RandomNumberGenerator.new()
 
+
+
+func _ready() -> void:
+	# quote----------------
+	var q2 =$Panel/quates/quote2.text
+	var q3 =$Panel/quates/quote3.text
+	var q4 =$Panel/quates/quote4.text
+	var q5 =$Panel/quates/quote5.text
+	var strList = [q2,q3,q4,q5]
+	var rng = RandomNumberGenerator.new()
 	#genreate time-based seed, otherwise the same random sequence of 
 	#test will always be shown
 	rng.randomize()
-
 	#generate a randon integer to be used as an index
 	var ix = rng.randi_range(0,strList.size()-1)	
 	var randomStr  = strList[ix]
-	$Panel/quote1.text=randomStr
+	$Panel/quote1.text =randomStr
+	#-----------------------------------
 	
 	#to concatenate label title score with value of score
 	$CenterContainer/VBoxContainer/Label2.text=$CenterContainer/VBoxContainer/Label2.text +str(Global.score)
-	
+	# Score check if the best
+	if Global.score > Global.best_score:
+		Global.best_score = Global.score
+		Global.save_score()
+		
+	$MarginContainer2/best_scorelabel.text = $MarginContainer2/best_scorelabel.text+ str(Global.best_score)
+		
 	#waite and show press space
 	$MarginContainer/Label.hide()
 	await get_tree().create_timer(2).timeout
@@ -51,3 +58,9 @@ func _on_homeorigin_pressed() -> void:
 
 func _on_homeorigin_mouse_entered() -> void:
 	$hover_tohome.play()
+
+# Score check if the best
+#if Global.score > Global.best_score:
+		 #Global.best_score = Global.score
+		 #$MarginContainer2/best_scorelabel.text = $MarginContainer2/best_scorelabel.text +str(Global.score)
+		 #Global.save_score()

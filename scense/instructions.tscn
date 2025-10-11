@@ -325,6 +325,7 @@ offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qtf8c")
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="note"]
 layout_mode = 0
