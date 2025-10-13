@@ -61,3 +61,12 @@ func _on_instructions_focus_entered() -> void:
 func _on_exit_focus_entered() -> void:
 	$hover.play()
 	
+
+func _on_setting_mouse_entered() -> void:
+	$hover.play()
+
+
+func _on_setting_pressed() -> void:
+	$click.play()
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://scense/option_menue.tscn")
