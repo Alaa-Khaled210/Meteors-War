@@ -1,11 +1,31 @@
-[gd_scene load_steps=12 format=3 uid="uid://867o33p7x2jw"]
+[gd_scene load_steps=16 format=3 uid="uid://867o33p7x2jw"]
 
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_6fgd8"]
 [ext_resource type="Script" uid="uid://ga6i54uxtpdr" path="res://scense/option_menue.gd" id="1_cn54w"]
 [ext_resource type="Texture2D" uid="uid://c7piur1xmtxdq" path="res://Graphic/instruction/arrow.png" id="1_rb20l"]
+[ext_resource type="Texture2D" uid="uid://pndv4i63n14e" path="res://Graphic/stars/1.png" id="2_2qnbf"]
 [ext_resource type="PackedScene" uid="uid://bjjpf1xv3yp8k" path="res://scense/setting_tab_container.tscn" id="3_60skt"]
+[ext_resource type="Texture2D" uid="uid://ce4p3bwvuevie" path="res://Graphic/stars/2.png" id="3_j4eme"]
+[ext_resource type="Texture2D" uid="uid://cciyto7eisg0y" path="res://Graphic/stars/3.png" id="4_o0wbm"]
 [ext_resource type="AudioStream" uid="uid://b5t6l825irktp" path="res://Audio/mixkit-hover-click-tone-2568.wav" id="4_rb20l"]
 [ext_resource type="AudioStream" uid="uid://do7wqechta5dv" path="res://Audio/mixkit-retro-arcade-casino-notification-211.wav" id="5_wc2bs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ksuu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2qnbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j4eme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o0wbm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1y72"]
 bg_color = Color(0.6, 0.6, 0.6, 0.341176)
@@ -51,6 +71,89 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cn54w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.556863, 0.560784, 0.67451, 0.65098)
+
+[node name="stars" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_7ksuu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_7ksuu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_7ksuu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_7ksuu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_7ksuu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_7ksuu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_7ksuu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_7ksuu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_7ksuu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_7ksuu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_7ksuu")
+autoplay = "default"
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_7ksuu")
+autoplay = "default"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
