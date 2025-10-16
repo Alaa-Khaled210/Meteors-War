@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://bjjpf1xv3yp8k"]
+[gd_scene load_steps=4 format=3 uid="uid://bjjpf1xv3yp8k"]
+
+[ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_2ufxo"]
+[ext_resource type="PackedScene" uid="uid://bwvjp52hhw2qy" path="res://scense/themode_screen_btn.tscn" id="2_nahte"]
+[ext_resource type="PackedScene" uid="uid://hclyhjvic23y" path="res://scense/resolution_btn.tscn" id="3_06s54"]
 
 [node name="setting_tab_container" type="Control"]
 layout_mode = 3
@@ -14,11 +18,14 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 100.0
-offset_top = 70.0
+offset_top = 80.0
 offset_right = -100.0
 offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.764516, 0.493237, 0.924367, 1)
+theme_override_colors/font_hovered_color = Color(0.627487, 0.556941, 0.823959, 1)
+theme_override_fonts/font = ExtResource("1_2ufxo")
 tab_alignment = 1
 current_tab = 0
 
@@ -38,27 +45,19 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Graphics/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 128
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
+[node name="Themode_Screen_btn" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_nahte")]
 layout_mode = 2
-text = "c1"
 
-[node name="Label2" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
+[node name="resolution_btn" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_06s54")]
 layout_mode = 2
-text = "c2"
-
-[node name="Label3" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "c3
-"
-
-[node name="Label4" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "c4"
 
 [node name="Sounds" type="TabBar" parent="TabContainer"]
 visible = false
