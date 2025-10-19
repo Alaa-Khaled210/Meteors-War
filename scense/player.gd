@@ -7,6 +7,9 @@ var can_shoot: bool = true
 
 signal laser(pos)
 
+@onready var pasue: CanvasLayer = $pasue
+var	 paused = false
+
 func _ready() -> void:
 
 	position=Vector2(597,543)
@@ -23,7 +26,20 @@ func _process(_delta: float) -> void:
 		can_shoot = false
 		$LaserTimer.start()
 		$LaserSound.play()
+		
+	#pasue game ------------------
+	if Input.is_action_just_pressed("pasue"):
+		pausemenue()
 	
+func pausemenue():
+	if paused:
+		pasue.hide()
+		Engine.time_scale= 1
+	else :
+		pasue.show()
+		Engine.time_scale=0
+	paused = !paused
+######################
 
 func _on_laser_timer_timeout() -> void:
 	can_shoot = true

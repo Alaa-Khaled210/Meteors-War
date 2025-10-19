@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://7svdd835ec5c"]
+[gd_scene load_steps=23 format=3 uid="uid://7svdd835ec5c"]
 
 [ext_resource type="Script" uid="uid://dbnmu64q4hwp7" path="res://scense/instructions.gd" id="1_c75xg"]
 [ext_resource type="Texture2D" uid="uid://r0rqllhr7bec" path="res://Graphic/homemeteorAnimate/3.png" id="1_psfcr"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cq41o6tkwejso" path="res://Graphic/instruction/pressed_button.png" id="9_0rgra"]
 [ext_resource type="AudioStream" uid="uid://b5t6l825irktp" path="res://Audio/mixkit-hover-click-tone-2568.wav" id="11_30l08"]
 [ext_resource type="Texture2D" uid="uid://bdrgvk44mrwyd" path="res://Graphic/instruction/hover.png" id="11_tr5vr"]
+[ext_resource type="Texture2D" uid="uid://y3bwvt7uw5ei" path="res://Graphic/instruction/letter-v.png" id="12_y5fpu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k8fnu"]
 animations = [{
@@ -207,35 +208,33 @@ metadata/_edit_lock_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="Panel"]
 layout_mode = 2
-offset_left = 430.5
-offset_top = 44.5
-offset_right = 617.5
-offset_bottom = 183.5
+offset_left = 482.5
+offset_top = 31.5
+offset_right = 648.5
+offset_bottom = 139.5
 color = Color(0.74902, 0.811765, 0.909804, 0.341176)
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+[node name="all" type="MarginContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -333.0
-offset_top = -199.0
-offset_right = 349.0
-offset_bottom = -50.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+[node name="vall" type="VBoxContainer" parent="Panel/all"]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/all/vall"]
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="move" type="Label" parent="Panel/MarginContainer/HBoxContainer"]
+[node name="move" type="Label" parent="Panel/all/vall/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.936266, 0.823485, 0.97439, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -245,26 +244,17 @@ text = "CONTROLS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="moveico" type="Sprite2D" parent="Panel/MarginContainer/HBoxContainer"]
-position = Vector2(460.5, 64.5)
+[node name="moveico" type="Sprite2D" parent="Panel/all/vall/HBoxContainer2"]
+position = Vector2(390.5, 2.5)
 scale = Vector2(0.0543314, 0.0463186)
 texture = ExtResource("6_tuftc")
+centered = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -325.0
-offset_top = 20.0
-offset_right = 296.0
-offset_bottom = 131.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/all/vall"]
+layout_mode = 2
+theme_override_constants/separation = 50
 
-[node name="shoot" type="Label" parent="Panel/HBoxContainer"]
+[node name="shoot" type="Label" parent="Panel/all/vall/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.937255, 0.823529, 0.972549, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -274,10 +264,29 @@ text = "SHOOT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer"]
-position = Vector2(465.5, 59.5)
-scale = Vector2(0.432129, 0.221191)
+[node name="Sprite2D" type="Sprite2D" parent="Panel/all/vall/HBoxContainer"]
+position = Vector2(469.5, 32.5)
+scale = Vector2(0.386841, 0.192627)
 texture = ExtResource("7_tuftc")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/all/vall"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="pasue" type="Label" parent="Panel/all/vall/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.937255, 0.823529, 0.972549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_vk23w")
+theme_override_font_sizes/font_size = 30
+text = "PASUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/all/vall/HBoxContainer3"]
+position = Vector2(474.5, 4.50001)
+scale = Vector2(0.193848, 0.179199)
+texture = ExtResource("12_y5fpu")
 
 [node name="backbtn" type="TextureButton" parent="."]
 layout_mode = 0

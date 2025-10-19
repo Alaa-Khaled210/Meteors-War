@@ -37,7 +37,10 @@ func _ready() -> void:
 	await get_tree().create_timer(2).timeout
 	$MarginContainer/Label.show()
 	
-	
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("exit"):
+			get_tree().quit()
+			
 #func _process(_delta: float) -> void:
 	#if Input.is_action_just_pressed("Shoot"):
 		#get_tree().change_scene_to_packed(level_scene)
@@ -47,6 +50,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Shoot") and $MarginContainer/Label.is_visible_in_tree():
 		#await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_packed(level_scene)
+	
+
 	
 
 
