@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://7hjsi1doflhg"]
+
+[ext_resource type="AudioStream" uid="uid://bg6iv0trv3io6" path="res://Audio/wind-chimes-with-wind-and-light-rain-171624.mp3" id="1_ucqgj"]
+[ext_resource type="Script" uid="uid://beekbg1phmf3t" path="res://scense/music_game.gd" id="2_oqpok"]
+
+[node name="MusicGame" type="AudioStreamPlayer"]
+stream = ExtResource("1_ucqgj")
+autoplay = true
+script = ExtResource("2_oqpok")

@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqeel0g4ti0nr"]
+[gd_scene load_steps=10 format=3 uid="uid://cqeel0g4ti0nr"]
 
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_2m6wh"]
 [ext_resource type="Script" uid="uid://bti2gr5hicrwi" path="res://scense/pause.gd" id="1_6a2ab"]
 [ext_resource type="Shader" uid="uid://in6oljjwcwtm" path="res://scense/pause.gdshader" id="2_6yu86"]
+[ext_resource type="Script" uid="uid://btu7shh4fqvwp" path="res://scense/resume.gd" id="4_2b8lw"]
+[ext_resource type="AudioStream" uid="uid://b5t6l825irktp" path="res://Audio/mixkit-hover-click-tone-2568.wav" id="4_n6llq"]
+[ext_resource type="AudioStream" uid="uid://do7wqechta5dv" path="res://Audio/mixkit-retro-arcade-casino-notification-211.wav" id="6_nh0ki"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n6llq"]
 shader = ExtResource("2_6yu86")
 shader_parameter/mount = 0.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2m6wh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2b8lw"]
 
 [node name="pasue" type="CanvasLayer"]
 process_mode = 3
@@ -71,24 +76,29 @@ theme_override_constants/separation = 45
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_hover_color = Color(0.878178, 0.735589, 0.879615, 1)
+focus_neighbor_top = NodePath("../Exit")
+theme_override_colors/font_hover_color = Color(0.826834, 0.636697, 0.830176, 1)
 theme_override_colors/font_color = Color(0.92549, 0.796078, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.827451, 0.635294, 0.831373, 1)
 theme_override_colors/font_pressed_color = Color(0.823529, 0.329412, 0.458824, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_2m6wh")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2m6wh")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_2m6wh")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_2m6wh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2b8lw")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2m6wh")
 text = "Resume"
+script = ExtResource("4_2b8lw")
 
 [node name="Exit" type="Button" parent="controler/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_hover_color = Color(0.822974, 0.629752, 0.826472, 1)
+focus_neighbor_bottom = NodePath("../resume")
+theme_override_colors/font_hover_color = Color(0.827451, 0.635294, 0.831373, 1)
 theme_override_colors/font_color = Color(0.92549, 0.796078, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.827451, 0.635294, 0.831373, 1)
 theme_override_colors/font_pressed_color = Color(0.823529, 0.329412, 0.458824, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_2m6wh")
@@ -99,5 +109,18 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_2m6wh")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2m6wh")
 text = "Exit"
 
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_n6llq")
+pitch_scale = 0.84
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_nh0ki")
+volume_db = -2.476
+pitch_scale = 2.12
+
+[connection signal="focus_entered" from="controler/VBoxContainer/resume" to="." method="_on_resume_focus_entered"]
+[connection signal="mouse_entered" from="controler/VBoxContainer/resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="controler/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="focus_entered" from="controler/VBoxContainer/Exit" to="." method="_on_exit_focus_entered"]
+[connection signal="mouse_entered" from="controler/VBoxContainer/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="controler/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

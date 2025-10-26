@@ -5,14 +5,14 @@ extends Control
 # Called every frame. 'delta' is the elapsed time since the previous frame.\
 
 
-
 func _ready() -> void:
 	# quote----------------
 	var q2 =$Panel/quates/quote2.text
 	var q3 =$Panel/quates/quote3.text
 	var q4 =$Panel/quates/quote4.text
 	var q5 =$Panel/quates/quote5.text
-	var strList = [q2,q3,q4,q5]
+	var q6 =$Panel/quates/quote6.text
+	var strList = [q2,q3,q4,q5,q6]
 	var rng = RandomNumberGenerator.new()
 	#genreate time-based seed, otherwise the same random sequence of 
 	#test will always be shown

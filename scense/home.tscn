@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://co6ve4o0cy18h"]
+[gd_scene load_steps=25 format=3 uid="uid://co6ve4o0cy18h"]
 
 [ext_resource type="Script" uid="uid://r65ukqdwuj55" path="res://scense/home.gd" id="1_g1icw"]
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_nh084"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://pndv4i63n14e" path="res://Graphic/stars/1.png" id="11_106qt"]
 [ext_resource type="Texture2D" uid="uid://ce4p3bwvuevie" path="res://Graphic/stars/2.png" id="12_uc1we"]
 [ext_resource type="Texture2D" uid="uid://cciyto7eisg0y" path="res://Graphic/stars/3.png" id="13_ggyeo"]
+[ext_resource type="PackedScene" uid="uid://7hjsi1doflhg" path="res://scense/music_game.tscn" id="16_3nfck"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3nfck"]
 animations = [{
@@ -370,6 +371,9 @@ scale = Vector2(0.271484, 0.267578)
 sprite_frames = SubResource("SpriteFrames_iixnd")
 autoplay = "default"
 frame_progress = 0.274875
+
+[node name="MusicGame" parent="." instance=ExtResource("16_3nfck")]
+bus = &"Music"
 
 [connection signal="mouse_entered" from="setting" to="." method="_on_setting_mouse_entered"]
 [connection signal="pressed" from="setting" to="." method="_on_setting_pressed"]

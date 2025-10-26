@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjjpf1xv3yp8k"]
+[gd_scene load_steps=5 format=3 uid="uid://bjjpf1xv3yp8k"]
 
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_2ufxo"]
 [ext_resource type="PackedScene" uid="uid://bwvjp52hhw2qy" path="res://scense/themode_screen_btn.tscn" id="2_nahte"]
 [ext_resource type="PackedScene" uid="uid://hclyhjvic23y" path="res://scense/resolution_btn.tscn" id="3_06s54"]
+[ext_resource type="PackedScene" uid="uid://dyx81l2xriw83" path="res://scense/audio_slider_setting.tscn" id="4_drqp4"]
 
 [node name="setting_tab_container" type="Control"]
 layout_mode = 3
@@ -76,24 +77,21 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sounds/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sounds/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sounds/MarginContainer/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Sounds/MarginContainer/VBoxContainer"]
+[node name="Audio_slider_setting" parent="TabContainer/Sounds/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_drqp4")]
 layout_mode = 2
-text = "a1"
 
-[node name="Label2" type="Label" parent="TabContainer/Sounds/MarginContainer/VBoxContainer"]
+[node name="Audio_slider_setting2" parent="TabContainer/Sounds/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_drqp4")]
 layout_mode = 2
-text = "a2"
+bus_name = "Music"
 
-[node name="Label3" type="Label" parent="TabContainer/Sounds/MarginContainer/VBoxContainer"]
+[node name="Audio_slider_setting3" parent="TabContainer/Sounds/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_drqp4")]
 layout_mode = 2
-text = "ca3
-"
-
-[node name="Label4" type="Label" parent="TabContainer/Sounds/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "a4"
+bus_name = "Sfx"

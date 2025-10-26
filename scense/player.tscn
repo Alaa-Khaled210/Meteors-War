@@ -42,6 +42,7 @@ one_shot = true
 
 [node name="LaserSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_rtp1y")
+bus = &"Sfx"
 
 [node name="pasue" parent="." instance=ExtResource("4_qc060")]
 visible = false

@@ -46,5 +46,6 @@ autostart = true
 [node name="DamagePlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_hwstv")
 volume_db = 24.0
+bus = &"Sfx"
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
