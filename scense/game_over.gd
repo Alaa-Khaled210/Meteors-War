@@ -6,13 +6,18 @@ extends Control
 
 
 func _ready() -> void:
+	#stop back music
+	#MusicGame.get_node("/root/MusicGame").stop()
 	# quote----------------
 	var q2 =$Panel/quates/quote2.text
 	var q3 =$Panel/quates/quote3.text
 	var q4 =$Panel/quates/quote4.text
 	var q5 =$Panel/quates/quote5.text
 	var q6 =$Panel/quates/quote6.text
-	var strList = [q2,q3,q4,q5,q6]
+	var q7 =$Panel/quates/quote7.text
+	var q8 =$Panel/quates/quote8.text
+	
+	var strList = [q2,q3,q4,q5,q6,q7,q8]
 	var rng = RandomNumberGenerator.new()
 	#genreate time-based seed, otherwise the same random sequence of 
 	#test will always be shown
@@ -36,6 +41,8 @@ func _ready() -> void:
 	$MarginContainer/Label.hide()
 	await get_tree().create_timer(2).timeout
 	$MarginContainer/Label.show()
+	
+	
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):

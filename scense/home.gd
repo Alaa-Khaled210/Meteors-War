@@ -14,6 +14,8 @@ func _ready() -> void:
 		
 		# animation speed
 		star.speed_scale =rng.randf_range(0.6,1.4)
+		
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
