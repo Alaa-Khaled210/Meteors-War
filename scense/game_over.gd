@@ -16,8 +16,8 @@ func _ready() -> void:
 	var q6 =$Panel/quates/quote6.text
 	var q7 =$Panel/quates/quote7.text
 	var q8 =$Panel/quates/quote8.text
-	
-	var strList = [q2,q3,q4,q5,q6,q7,q8]
+	var q9 =$Panel/quates/quote9.text
+	var strList = [q2,q3,q4,q5,q6,q7,q8,q9]
 	var rng = RandomNumberGenerator.new()
 	#genreate time-based seed, otherwise the same random sequence of 
 	#test will always be shown

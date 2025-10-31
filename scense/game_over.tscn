@@ -289,6 +289,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="quote9" type="Label" parent="Panel/quates"]
+visible = false
+offset_left = 869.0
+offset_top = 71.0
+offset_right = 1084.0
+offset_bottom = 241.0
+theme_override_colors/font_color = Color(0.706821, 0.365382, 0.616246, 0.980392)
+theme_override_colors/font_shadow_color = Color(0.568438, 0.51617, 0.807854, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("1_jic06")
+theme_override_font_sizes/font_size = 18
+text = "There is hope, even when your brain tells you there isn’t."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="shadow_forhomebtn" type="TextureButton" parent="."]
 modulate = Color(0, 0, 0.427451, 0.984314)
 layout_mode = 0
