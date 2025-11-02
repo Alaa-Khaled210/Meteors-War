@@ -2,13 +2,11 @@ extends Control
 
 @export var level_scene : PackedScene 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.\
-
 
 func _ready() -> void:
-	#stop back music
+#stop back music
 	#MusicGame.get_node("/root/MusicGame").stop()
-	# quote----------------
+# quote----------------
 	var q2 =$Panel/quates/quote2.text
 	var q3 =$Panel/quates/quote3.text
 	var q4 =$Panel/quates/quote4.text
@@ -26,42 +24,35 @@ func _ready() -> void:
 	var ix = rng.randi_range(0,strList.size()-1)	
 	var randomStr  = strList[ix]
 	$Panel/quote1.text =randomStr
-	#-----------------------------------
+#-----------------------------------
 	
-	#to concatenate label title score with value of score
+# score and best score:-----------
+	# to concatenate label title score with value of score
 	$CenterContainer/VBoxContainer/Label2.text=$CenterContainer/VBoxContainer/Label2.text +str(Global.score)
 	# Score check if the best
 	if Global.score > Global.best_score:
 		Global.best_score = Global.score
 		Global.save_score()
-		
+	# to concatenate label title best_score with the value 
 	$MarginContainer2/best_scorelabel.text = $MarginContainer2/best_scorelabel.text+ str(Global.best_score)
+#-----------------------------------------
 		
-	#waite and show press space
+# waite and show press space
 	$MarginContainer/Label.hide()
 	await get_tree().create_timer(2).timeout
 	$MarginContainer/Label.show()
 	
 	
-	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
 			get_tree().quit()
-			
-#func _process(_delta: float) -> void:
-	#if Input.is_action_just_pressed("Shoot"):
-		#get_tree().change_scene_to_packed(level_scene)
 		
-		
+# press space and check if it visible in tree
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Shoot") and $MarginContainer/Label.is_visible_in_tree():
-		#await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_packed(level_scene)
 	
-
 	
-
-
 func _on_homeorigin_pressed() -> void:
 	$click_tohome.play()
 	await get_tree().create_timer(0.25).timeout
@@ -70,9 +61,3 @@ func _on_homeorigin_pressed() -> void:
 
 func _on_homeorigin_mouse_entered() -> void:
 	$hover_tohome.play()
-
-# Score check if the best
-#if Global.score > Global.best_score:
-		 #Global.best_score = Global.score
-		 #$MarginContainer2/best_scorelabel.text = $MarginContainer2/best_scorelabel.text +str(Global.score)
-		 #Global.save_score()

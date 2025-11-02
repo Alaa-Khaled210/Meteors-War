@@ -373,7 +373,6 @@ autoplay = "default"
 frame_progress = 0.274875
 
 [node name="MusicGame" parent="." instance=ExtResource("16_3nfck")]
-bus = &"Music"
 
 [connection signal="mouse_entered" from="setting" to="." method="_on_setting_mouse_entered"]
 [connection signal="pressed" from="setting" to="." method="_on_setting_pressed"]
