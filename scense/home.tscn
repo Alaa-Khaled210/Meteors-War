@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://co6ve4o0cy18h"]
+[gd_scene load_steps=25 format=3 uid="uid://co6ve4o0cy18h"]
 
 [ext_resource type="Script" uid="uid://r65ukqdwuj55" path="res://scense/home.gd" id="1_g1icw"]
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_nh084"]
@@ -33,9 +33,6 @@ animations = [{
 "name": &"default",
 "speed": 8.0
 }]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3nfck"]
-load_path = "res://.godot/imported/setting2.png-4db0c3fe65d783c6101b43c7cdc88de8.ctex"
 
 [sub_resource type="Gradient" id="Gradient_6347k"]
 offsets = PackedFloat32Array(0, 0.706468, 0.711443)
@@ -210,8 +207,6 @@ offset_top = 23.0
 offset_right = 81.0
 offset_bottom = 82.0
 texture_normal = ExtResource("2_ggyeo")
-texture_pressed = SubResource("CompressedTexture2D_3nfck")
-texture_hover = SubResource("CompressedTexture2D_3nfck")
 ignore_texture_size = true
 stretch_mode = 4
 
