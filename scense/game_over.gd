@@ -5,7 +5,7 @@ extends Control
 
 func _ready() -> void:
 #stop back music
-	#MusicGame.get_node("/root/MusicGame").stop()
+	MusicGame.stop_music()
 # quote----------------
 	var q2 =$Panel/quates/quote2.text
 	var q3 =$Panel/quates/quote3.text
@@ -51,12 +51,15 @@ func _process(_delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Shoot") and $MarginContainer/Label.is_visible_in_tree():
 		get_tree().change_scene_to_packed(level_scene)
+		MusicGame.play_home_music()
+		
 	
 	
 func _on_homeorigin_pressed() -> void:
 	$click_tohome.play()
 	await get_tree().create_timer(0.25).timeout
 	get_tree().change_scene_to_file("res://scense/home.tscn")
+	MusicGame.play_home_music()
 
 
 func _on_homeorigin_mouse_entered() -> void:

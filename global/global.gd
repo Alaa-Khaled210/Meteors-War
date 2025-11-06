@@ -1,5 +1,6 @@
 extends Node
 
+# to mange score and best score 
 const SAVEFILE = "user://savefile.save"
 var score := 0
 var best_score:= 0

@@ -10,7 +10,7 @@ func _ready() -> void:
 	#set health ui
 	get_tree().call_group('Ui','set_health',health)
 
-	#Stars 
+# Stars: ----------------------------
 	var size := get_viewport().get_visible_rect().size
 	var rng := RandomNumberGenerator.new()
 	for star in $Stars.get_children():
@@ -25,7 +25,7 @@ func _ready() -> void:
 		
 		# animation speed
 		star.speed_scale =rng.randf_range(0.6,1.4)
-
+#-------------------------------------------
 func _on_meteor_timer_timeout() -> void:
 	
 	# 2. creat an instance from meteor each timer trigerr
@@ -47,4 +47,5 @@ func _on_player_laser(pos) -> void:
 	$Lasers.add_child(laser)
 	laser.position=pos
 	
+
 	
