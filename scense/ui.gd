@@ -2,8 +2,8 @@ extends CanvasLayer
 
 static var image = load("res://Graphic/rocket2.png")
 var time_elapsed := 0
+
 func set_health(amount):
-	
 # remove all children from hboxcontainer
 	for child in $MarginContainer2/HBoxContainer.get_children():
 		child.queue_free()
