@@ -2,14 +2,15 @@
 
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_2m6wh"]
 [ext_resource type="Script" uid="uid://bti2gr5hicrwi" path="res://scense/pause.gd" id="1_6a2ab"]
-[ext_resource type="Shader" uid="uid://in6oljjwcwtm" path="res://scense/pause.gdshader" id="2_6yu86"]
 [ext_resource type="Script" uid="uid://btu7shh4fqvwp" path="res://scense/resume.gd" id="4_2b8lw"]
 [ext_resource type="AudioStream" uid="uid://b5t6l825irktp" path="res://Audio/mixkit-hover-click-tone-2568.wav" id="4_n6llq"]
 [ext_resource type="AudioStream" uid="uid://do7wqechta5dv" path="res://Audio/mixkit-retro-arcade-casino-notification-211.wav" id="6_nh0ki"]
 
+[sub_resource type="Shader" id="Shader_2b8lw"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n6llq"]
-shader = ExtResource("2_6yu86")
-shader_parameter/mount = 0.0
+render_priority = 0
+shader = SubResource("Shader_2b8lw")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2m6wh"]
 

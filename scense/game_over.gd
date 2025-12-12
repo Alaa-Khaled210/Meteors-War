@@ -10,6 +10,7 @@ func _ready() -> void:
 	var q2 =$Panel/quates/quote2.text
 	var q3 =$Panel/quates/quote3.text
 	var q4 =$Panel/quates/quote4.text
+	
 	var q5 =$Panel/quates/quote5.text
 	var q6 =$Panel/quates/quote6.text
 	var q7 =$Panel/quates/quote7.text
