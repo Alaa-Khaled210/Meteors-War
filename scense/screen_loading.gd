@@ -1,11 +1,11 @@
 extends Control
 
 func _ready() -> void:
-	
+	MusicGame.stop_music()
 	# Stars :----------------------------------- 
 	var screenloading := get_viewport().get_visible_rect().size
 	var rng := RandomNumberGenerator.new()
-	for star in $stars.get_children():
+	for star in $ColorRect/stars.get_children():
 		#position 
 		var random_x=rng.randi_range(0, int(screenloading.x))
 		var random_y=rng.randi_range(0, int(screenloading.y))

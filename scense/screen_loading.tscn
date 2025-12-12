@@ -1,7 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://cogw5dent1et3"]
+[gd_scene load_steps=7 format=3 uid="uid://cogw5dent1et3"]
 
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_1t4i8"]
 [ext_resource type="Script" uid="uid://bcyqylqidekjx" path="res://scense/screen_loading.gd" id="1_x0o0x"]
+[ext_resource type="Texture2D" uid="uid://pndv4i63n14e" path="res://Graphic/stars/1.png" id="2_6kvbl"]
+[ext_resource type="Texture2D" uid="uid://ce4p3bwvuevie" path="res://Graphic/stars/2.png" id="3_fek54"]
+[ext_resource type="Texture2D" uid="uid://cciyto7eisg0y" path="res://Graphic/stars/3.png" id="4_nqr3l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c03x4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6kvbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fek54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nqr3l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="screen_loading" type="Control"]
 layout_mode = 3
@@ -22,6 +42,78 @@ grow_vertical = 2
 color = Color(0.556863, 0.560784, 0.67451, 0.65098)
 
 [node name="stars" type="Node2D" parent="ColorRect"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_c03x4")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ColorRect/stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_c03x4")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="ColorRect/stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_c03x4")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="ColorRect/stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_c03x4")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="ColorRect/stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_c03x4")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="ColorRect/stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_c03x4")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="ColorRect/stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_c03x4")
+autoplay = "default"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="ColorRect/stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_c03x4")
+autoplay = "default"
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="ColorRect/stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_c03x4")
+autoplay = "default"
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="ColorRect/stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_c03x4")
+autoplay = "default"
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="ColorRect/stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_c03x4")
+autoplay = "default"
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="ColorRect/stars"]
+position = Vector2(131, 153)
+scale = Vector2(0.013455, 0.0120135)
+sprite_frames = SubResource("SpriteFrames_c03x4")
+autoplay = "default"
 
 [node name="ProgressBar" type="ProgressBar" parent="ColorRect"]
 layout_mode = 1
