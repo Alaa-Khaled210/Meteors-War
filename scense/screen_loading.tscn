@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cogw5dent1et3"]
+[gd_scene load_steps=8 format=3 uid="uid://cogw5dent1et3"]
 
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_1t4i8"]
 [ext_resource type="Script" uid="uid://bcyqylqidekjx" path="res://scense/screen_loading.gd" id="1_x0o0x"]
@@ -23,6 +23,14 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kvbl"]
+bg_color = Color(0.760784, 0.596078, 0.698039, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+
 [node name="screen_loading" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -40,99 +48,99 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.556863, 0.560784, 0.67451, 0.65098)
+metadata/_edit_lock_ = true
 
-[node name="stars" type="Node2D" parent="ColorRect"]
+[node name="stars" type="Node2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/stars"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="stars"]
 position = Vector2(131, 153)
 scale = Vector2(0.013455, 0.0120135)
 sprite_frames = SubResource("SpriteFrames_c03x4")
 autoplay = "default"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ColorRect/stars"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="stars"]
 position = Vector2(131, 153)
 scale = Vector2(0.013455, 0.0120135)
 sprite_frames = SubResource("SpriteFrames_c03x4")
 autoplay = "default"
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="ColorRect/stars"]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="stars"]
 position = Vector2(131, 153)
 scale = Vector2(0.013455, 0.0120135)
 sprite_frames = SubResource("SpriteFrames_c03x4")
 autoplay = "default"
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="ColorRect/stars"]
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="stars"]
 position = Vector2(131, 153)
 scale = Vector2(0.013455, 0.0120135)
 sprite_frames = SubResource("SpriteFrames_c03x4")
 autoplay = "default"
 
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="ColorRect/stars"]
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="stars"]
 position = Vector2(131, 153)
 scale = Vector2(0.013455, 0.0120135)
 sprite_frames = SubResource("SpriteFrames_c03x4")
 autoplay = "default"
 
-[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="ColorRect/stars"]
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="stars"]
 position = Vector2(131, 153)
 scale = Vector2(0.013455, 0.0120135)
 sprite_frames = SubResource("SpriteFrames_c03x4")
 autoplay = "default"
 
-[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="ColorRect/stars"]
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="stars"]
 position = Vector2(131, 153)
 scale = Vector2(0.013455, 0.0120135)
 sprite_frames = SubResource("SpriteFrames_c03x4")
 autoplay = "default"
 
-[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="ColorRect/stars"]
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="stars"]
 position = Vector2(131, 153)
 scale = Vector2(0.013455, 0.0120135)
 sprite_frames = SubResource("SpriteFrames_c03x4")
 autoplay = "default"
 
-[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="ColorRect/stars"]
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="stars"]
 position = Vector2(131, 153)
 scale = Vector2(0.013455, 0.0120135)
 sprite_frames = SubResource("SpriteFrames_c03x4")
 autoplay = "default"
 
-[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="ColorRect/stars"]
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="stars"]
 position = Vector2(131, 153)
 scale = Vector2(0.013455, 0.0120135)
 sprite_frames = SubResource("SpriteFrames_c03x4")
 autoplay = "default"
 
-[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="ColorRect/stars"]
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="stars"]
 position = Vector2(131, 153)
 scale = Vector2(0.013455, 0.0120135)
 sprite_frames = SubResource("SpriteFrames_c03x4")
 autoplay = "default"
 
-[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="ColorRect/stars"]
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="stars"]
 position = Vector2(131, 153)
 scale = Vector2(0.013455, 0.0120135)
 sprite_frames = SubResource("SpriteFrames_c03x4")
 autoplay = "default"
 
-[node name="ProgressBar" type="ProgressBar" parent="ColorRect"]
+[node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 4.0
-offset_top = -21.0
-offset_right = 4.0
-offset_bottom = 28.0
+offset_top = -12.0
+offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0.33663, 0.0778071, 0.675373, 0.831373)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_1t4i8")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/fill = SubResource("StyleBoxFlat_6kvbl")
 
-[node name="title" type="Label" parent="ColorRect"]
+[node name="title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -157,3 +165,9 @@ theme_override_font_sizes/font_size = 50
 text = "Meteors War"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 91.0
+offset_bottom = 40.0
+text = "loading"
