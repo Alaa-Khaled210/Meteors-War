@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cogw5dent1et3"]
+[gd_scene load_steps=9 format=3 uid="uid://cogw5dent1et3"]
 
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_1t4i8"]
 [ext_resource type="Script" uid="uid://bcyqylqidekjx" path="res://scense/screen_loading.gd" id="1_x0o0x"]
@@ -25,11 +25,20 @@ animations = [{
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kvbl"]
 bg_color = Color(0.760784, 0.596078, 0.698039, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fek54"]
+bg_color = Color(0.936599, 0.823455, 0.726927, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.801651, 0.464542, 0.693181, 0.6)
+shadow_size = 20
 
 [node name="screen_loading" type="Control"]
 layout_mode = 3
@@ -138,7 +147,8 @@ theme_override_colors/font_outline_color = Color(0.33663, 0.0778071, 0.675373, 0
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_1t4i8")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/fill = SubResource("StyleBoxFlat_6kvbl")
+theme_override_styles/background = SubResource("StyleBoxFlat_6kvbl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fek54")
 
 [node name="title" type="Label" parent="."]
 layout_mode = 1
@@ -170,4 +180,4 @@ vertical_alignment = 1
 layout_mode = 0
 offset_right = 91.0
 offset_bottom = 40.0
-text = "loading"
+text = "loading . . ."

@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 			reached_100=true
 			progress_bar.value= 100.0
 		var next_scene=ResourceLoader.load_threaded_get(scene_path)
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_packed(next_scene)
 		MusicGame.play_home_music()
 			
