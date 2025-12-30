@@ -32,12 +32,14 @@ corner_radius_bottom_left = 16
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fek54"]
-bg_color = Color(0.936599, 0.823455, 0.726927, 1)
+bg_color = Color(0.921569, 0.85098, 0.960784, 1)
+border_width_left = 5
+border_width_bottom = 5
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0.801651, 0.464542, 0.693181, 0.6)
+shadow_color = Color(0.8, 0.462745, 0.694118, 0.6)
 shadow_size = 20
 
 [node name="screen_loading" type="Control"]
