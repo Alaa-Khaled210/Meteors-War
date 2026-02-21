@@ -4,6 +4,7 @@ extends Node2D
 var meteor_scene :PackedScene =load("res://scense/meteor.tscn")
 var laser_scene :PackedScene =load("res://scense/laser.tscn")
 
+
 var health: int = 4
 
 func _ready() -> void:
@@ -41,7 +42,8 @@ func _on_meteor_collision():
 	get_tree().call_group('Ui','set_health',health)
 	if health <=0 :
 		get_tree().call_deferred("change_scene_to_file","res://scense/game_over.tscn")
-		
+	
+	
 func _on_player_laser(pos) -> void:
 	var laser = laser_scene.instantiate()
 	$Lasers.add_child(laser)

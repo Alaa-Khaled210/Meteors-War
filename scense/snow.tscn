@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://deionlv26foho"]
+
+[sub_resource type="Curve" id="Curve_dtjhp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.94199, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nvoug"]
+curve = SubResource("Curve_dtjhp")
+
+[sub_resource type="Gradient" id="Gradient_i5mhm"]
+offsets = PackedFloat32Array(0.572115, 0.701923)
+colors = PackedColorArray(1, 1, 1, 0.352941, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7x02c"]
+gradient = SubResource("Gradient_i5mhm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h15ln"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 0, 1)
+direction = Vector3(0, 1, 0)
+spread = 15.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 20, 0)
+scale_max = 5.0
+color_initial_ramp = SubResource("GradientTexture1D_7x02c")
+alpha_curve = SubResource("CurveTexture_nvoug")
+turbulence_enabled = true
+turbulence_influence_min = 0.02
+turbulence_influence_max = 0.08
+
+[node name="snow" type="GPUParticles2D"]
+amount = 50
+lifetime = 4.0
+preprocess = 30.0
+process_material = SubResource("ParticleProcessMaterial_h15ln")

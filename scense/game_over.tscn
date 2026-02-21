@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4gealged4jk5"]
+[gd_scene load_steps=17 format=3 uid="uid://c4gealged4jk5"]
 
 [ext_resource type="Script" uid="uid://blsdyvjqr8g5t" path="res://scense/game_over.gd" id="1_3imhc"]
 [ext_resource type="FontFile" uid="uid://crgknw0a00f6k" path="res://Graphic/Fonts/PressStart2P-Regular.ttf" id="1_jic06"]
 [ext_resource type="PackedScene" uid="uid://ce6y6qjtkyntq" path="res://scense/level.tscn" id="2_ln6ue"]
+[ext_resource type="PackedScene" uid="uid://deionlv26foho" path="res://scense/snow.tscn" id="3_g6e41"]
 [ext_resource type="AudioStream" uid="uid://cbr2jbyl1812i" path="res://Audio/mixkit-player-losing-or-failing-2042.wav" id="4_r8gqb"]
 [ext_resource type="Texture2D" uid="uid://bb2v7cikeouyh" path="res://Graphic/gameover/1.png" id="4_tdf7g"]
 [ext_resource type="Texture2D" uid="uid://bssbs50ggg1tp" path="res://Graphic/gameover/meteorite.png" id="5_0tomw"]
@@ -64,6 +65,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.759991, 0.595569, 0.699824, 1)
+
+[node name="snow" parent="." instance=ExtResource("3_g6e41")]
+position = Vector2(567, 5)
 
 [node name="meteorfall" type="Sprite2D" parent="."]
 position = Vector2(157.903, 146.367)

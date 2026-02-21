@@ -3,7 +3,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+	# 
+	SnowGlobal.visible= false
 # Stars :----------------------------------- 
 	var homescreen := get_viewport().get_visible_rect().size
 	var rng := RandomNumberGenerator.new()
@@ -15,6 +16,7 @@ func _ready() -> void:
 		
 		# animation speed
 		star.speed_scale =rng.randf_range(0.6,1.4)
+		
 #--------------------------------------------	
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
