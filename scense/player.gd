@@ -9,6 +9,9 @@ signal laser(pos)
 
 @onready var pasue: CanvasLayer = $pasue
 var	 paused = false
+var health: int = 4
+@onready var playerimg: Sprite2D = $playerimg
+#var original_color = Color.WHITE
 
 func _ready() -> void:
 
@@ -43,3 +46,16 @@ func pausemenue():
 
 func _on_laser_timer_timeout() -> void:
 	can_shoot = true
+
+func apply_damage(amount):
+	health -=amount
+	flash_led()
+	get_tree().call_group('Ui','set_health',health)
+	if health <=0 :
+		get_tree().call_deferred("change_scene_to_file","res://scense/game_over.tscn")
+
+func flash_led():
+	playerimg.modulate = Color(1, 0, 0)
+	await get_tree().create_timer(0.2).timeout
+	playerimg.modulate = Color.WHITE
+	#await get_tree().create_timer(0.1).timeout

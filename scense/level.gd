@@ -3,12 +3,12 @@ extends Node2D
 # 1. load the scene
 var meteor_scene :PackedScene =load("res://scense/meteor.tscn")
 var laser_scene :PackedScene =load("res://scense/laser.tscn")
-
-
+@onready var player: CharacterBody2D = $Player
 var health: int = 4
 
 func _ready() -> void:
 	#set health ui
+	#to appaer health tries when level start without this the health tries will apear only when apply_damage
 	get_tree().call_group('Ui','set_health',health)
 
 # Stars: ----------------------------
@@ -35,14 +35,10 @@ func _on_meteor_timer_timeout() -> void:
 	$Meteors.add_child(meteor)
 	# connect signal
 	meteor.connect("collision", _on_meteor_collision)
-	
-	
+
 func _on_meteor_collision():
-	health -=1
-	get_tree().call_group('Ui','set_health',health)
-	if health <=0 :
-		get_tree().call_deferred("change_scene_to_file","res://scense/game_over.tscn")
-	
+	# 1 cuz pass Argument amount and will health -=amount in Player script
+	player.apply_damage(1)
 	
 func _on_player_laser(pos) -> void:
 	var laser = laser_scene.instantiate()
